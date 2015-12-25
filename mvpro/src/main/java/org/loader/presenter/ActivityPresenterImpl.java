@@ -35,7 +35,7 @@ public class ActivityPresenterImpl<T extends IView> extends Activity implements 
         super.onRestoreInstanceState(savedInstanceState);
         if (mView == null) {
             try {
-                mView = getDelegateClass().newInstance();
+                mView = getViewClass().newInstance();
             } catch (InstantiationException e) {
                 throw new RuntimeException("create IDelegate error");
             } catch (IllegalAccessException e) {

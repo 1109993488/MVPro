@@ -30,6 +30,7 @@ public class ActivityPresenterImpl<T extends IView> extends Activity implements 
         }
     }
     
+/**    
      @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
@@ -43,6 +44,7 @@ public class ActivityPresenterImpl<T extends IView> extends Activity implements 
             }
         }
     }
+*/
 
     @Override
     public Class<T> getViewClass() {

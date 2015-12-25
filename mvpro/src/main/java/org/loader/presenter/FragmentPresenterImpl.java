@@ -34,6 +34,20 @@ public class FragmentPresenterImpl<T extends IView> extends Fragment implements 
             throw new RuntimeException(e.getMessage());
         }
     }
+    
+    @Override
+    public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
+        super.onViewStateRestored(savedInstanceState);
+        if (mView == null) {
+            try {
+                mView = getViewClass().newInstance();
+            } catch (java.lang.InstantiationException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
     @Override
     public Class<T> getViewClass() {

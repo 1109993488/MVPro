@@ -35,6 +35,7 @@ public class FragmentPresenterImpl<T extends IView> extends Fragment implements 
         }
     }
     
+/**    
     @Override
     public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
         super.onViewStateRestored(savedInstanceState);
@@ -48,6 +49,7 @@ public class FragmentPresenterImpl<T extends IView> extends Fragment implements 
             }
         }
     }
+*/
 
     @Override
     public Class<T> getViewClass() {

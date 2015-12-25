@@ -29,6 +29,20 @@ public class ActivityPresenterImpl<T extends IView> extends Activity implements 
             throw new RuntimeException(e.getMessage());
         }
     }
+    
+     @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        if (mView == null) {
+            try {
+                mView = getViewClass().newInstance();
+            } catch (InstantiationException e) {
+                throw new RuntimeException("create IDelegate error");
+            } catch (IllegalAccessException e) {
+                throw new RuntimeException("create IDelegate error");
+            }
+        }
+    }
 
     @Override
     public Class<T> getViewClass() {
